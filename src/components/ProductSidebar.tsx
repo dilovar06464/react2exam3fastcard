@@ -90,7 +90,7 @@ const ProductSidebar: React.FC<ProductSidebarProps> = ({
                 onClick={() => setSelectedCategory(c.categoryName)}
                 className={`cursor-pointer ${selectedCategory === c.categoryName ? 'text-red-500' : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'}`}
               >
-                {t(`categories.${c.categoryName}`, c.categoryName)}
+                {String(t(`categories.${c.categoryName}`, c.categoryName))}
               </span>
             ))}
             <span className="text-red-500 cursor-pointer mt-1">{t('products.see_all', 'See all')}</span>

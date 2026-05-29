@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import type { AppDispatch, RootState } from '../store/store'
+import type { AppDispatch } from '../store/store'
 import { getCategories } from '../api/CategoryApi'
-import { ChevronRight, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import FlashSalec from '../components/FlashSalec'
@@ -34,7 +34,7 @@ const Home = () => {
   const dispatch = useDispatch<AppDispatch>()
   const { t } = useTranslation()
   const slides = getSlides(t)
-  const { categories, isLoading } = useSelector((state: RootState) => state.categories)
+
 
   useEffect(() => {
     dispatch(getCategories())
@@ -66,7 +66,7 @@ const Home = () => {
                       <span className="text-sm font-medium">{slide.series}</span>
                     </div>
                     <h2 className="text-5xl font-semibold leading-tight tracking-wide">
-                      {slide.title.split(' ').map((word, i) => (
+                      {slide.title.split(' ').map((word: string, i: number) => (
                         <span key={i}>
                           {word} {i === 3 ? <br /> : ''}
                         </span>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Search, Heart, ShoppingCart, User, ShoppingBag, LogOut, Languages, ChevronDown } from 'lucide-react'
+import { Search, Heart, ShoppingCart, User, ShoppingBag, LogOut } from 'lucide-react'
 import { useSelector } from 'react-redux'
 import type { RootState } from './store/store'
 import NavLists from './components/NavLists'
@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next'
 
 const Header = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
-  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false)
+  const [, setIsLangMenuOpen] = useState(false)
   const { isAuthenticated, logout } = useAuth()
   const { t, i18n } = useTranslation()
   const navigate = useNavigate()

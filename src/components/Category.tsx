@@ -5,19 +5,12 @@ import { getCategories } from '../api/CategoryApi'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import { useNavigate } from 'react-router-dom'
-import { Smartphone, Monitor, Watch, Camera, Headphones, Gamepad2, Box, ArrowLeft, ArrowRight } from 'lucide-react'
+import { Smartphone, Monitor, Watch, Camera, Headphones, Gamepad2, ArrowLeft, ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-const iconMap: Record<string, any> = {
-  'Phones': Smartphone,
-  'Computers': Monitor,
-  'SmartWatch': Watch,
-  'Camera': Camera,
-  'HeadPhones': Headphones,
-  'Gaming': Gamepad2,
-}
+
 
 const Category = () => {
   const navigate = useNavigate()

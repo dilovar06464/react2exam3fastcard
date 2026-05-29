@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState, AppDispatch } from '../store/store'
@@ -88,7 +88,7 @@ const Details = () => {
       parsedImages = JSON.parse(product.images)
       if (!Array.isArray(parsedImages)) parsedImages = [product.images]
     } catch {
-      parsedImages = product.images.split(',').map(s => s.trim()).filter(Boolean)
+      parsedImages = product.images.split(',').map((s: string) => s.trim()).filter(Boolean)
     }
   }
 
